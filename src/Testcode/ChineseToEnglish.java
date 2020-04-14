@@ -10,6 +10,7 @@ import java.io.*;
 public class ChineseToEnglish {
 
     //读取excel文件中的数据，并将汉字的首字母提取出来，拼接为insert语句
+    //origin push
     //push remote
     public static void main(String[] args) {
         File file = new File("K:\\test1.xls");
