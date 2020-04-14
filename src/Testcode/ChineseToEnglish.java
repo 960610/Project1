@@ -12,6 +12,7 @@ public class ChineseToEnglish {
     //读取excel文件中的数据，并将汉字的首字母提取出来，拼接为insert语句
     //origin push
     //push remote
+    //22
     public static void main(String[] args) {
         File file = new File("K:\\test1.xls");
         File fout = new File("K:\\test2.txt");
