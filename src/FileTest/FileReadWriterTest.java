@@ -2,10 +2,7 @@ package FileTest;
 
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class FileReadWriterTest {
 
@@ -16,11 +13,15 @@ public class FileReadWriterTest {
         try {
             File file = new File("K:\\hello.txt");
             fr = new FileReader(file);
-            int read ;
-            String str = new String();
-            while((read = fr.read()) != -1){
-                System.out.print( (char)read);
-                read = fr.read();
+            int len ;
+            char[] cbuf = new char[5];
+            while((len = fr.read(cbuf)) != -1){
+                for (int i = 0; i < len ; i++) {
+                    System.out.print(cbuf[i]);
+                }
+                //方式二
+                //String str = new String(cbuf,0,len);
+                //System.out.println(str);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -35,4 +36,27 @@ public class FileReadWriterTest {
             }
         }
     }
+@Test
+    public void testFileWriter() {
+        FileWriter fw = null;
+
+        try {
+            File file = new File("K:\\hello1.txt");
+
+            fw = new FileWriter(file,true);
+            fw.write("i have a dream!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(fw != null){
+                try {
+                    fw.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+}
 }
