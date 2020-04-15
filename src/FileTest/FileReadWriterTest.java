@@ -58,5 +58,44 @@ public class FileReadWriterTest {
         }
 
 
-}
+    }
+
+    @Test
+    public void testFileWriterRead(){
+
+        FileWriter fw = null;
+        FileReader fr = null;
+        try {
+
+            File filein = new File("K:\\hello.txt");
+            File fileout = new File("K:\\hello1.txt");
+            fw = new FileWriter(fileout,true);
+            fr = new FileReader(filein);
+
+            int len ;
+            char[] cbuf = new char[5];
+            while((len = fr.read(cbuf)) != -1){
+                //每次写出len个字符
+               fw.write(cbuf,0,len);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(fw != null){
+                try {
+                    fw.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(fr != null){
+                try {
+                    fr.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
 }
