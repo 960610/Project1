@@ -10,6 +10,7 @@ import java.io.IOException;
 public class FileReadWriterTest {
 
     @Test
+    //单元测试
     public void testFileRead(){
         FileReader fr = null;
         try {
