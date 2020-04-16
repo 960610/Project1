@@ -8,7 +8,7 @@ import java.io.*;
 
 public class FreeCouponInsert {
     public static void main(String[] args) throws Exception{
-        File file = new File("K:\\免费权益.xls");
+        File file = new File("K:\\免费权益资源表.xls");
         File fileout = new File("K:\\freeInsert.txt");
         String str = "INSERT INTO `td_cc_coupon_uptodate`(`merchant_name`, `coupon_name`, `consum_way`, `expiry_date`, `seq_id`, `is_price`, `create_time`) VALUES ('";
 
