@@ -8,9 +8,9 @@ import java.io.*;
 
 public class PayCouponInsert  {
     public static void main(String[] args) throws Exception{
-        File file = new File("K:\\付费权益资源表.xls");
+        File file = new File("K:\\付费权益.xls");
         File fileout = new File("K:\\payInsert.txt");
-        String str = "INSERT INTO `td_cc_coupon_uptodate`(`brand_name`, `coupon_name`,  `consum_way`, `purchase_price`,  `seq_id`, `is_price`) VALUES ('";
+        String str = "INSERT INTO `td_cc_coupon_uptodate`( `coupon_name`,  `consum_way`, `purchase_price`,  `seq_id`, `is_price`) VALUES ('";
 
         try {
             FileInputStream fis = new FileInputStream(file.getAbsolutePath());
