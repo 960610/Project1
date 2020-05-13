@@ -8,6 +8,7 @@ import java.io.*;
 
 public class PayCouponInsert  {
     public static void main(String[] args) throws Exception{
+        long time = System.currentTimeMillis();
         File file = new File("K:\\付费权益.xls");
         File fileout = new File("K:\\payInsert.txt");
         String str = "INSERT INTO `td_cc_coupon_uptodate`( `coupon_name`,  `consum_way`, `purchase_price`,  `seq_id`, `is_price`) VALUES ('";
@@ -42,6 +43,7 @@ public class PayCouponInsert  {
                     }
                 }
                 System.out.println("成功");
+                System.out.println("所用时间：" + (System.currentTimeMillis()-time) + "毫秒");
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (BiffException e) {

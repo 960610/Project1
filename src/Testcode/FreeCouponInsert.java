@@ -8,7 +8,9 @@ import java.io.*;
 
 public class FreeCouponInsert {
     public static void main(String[] args) throws Exception{
+        long time = System.currentTimeMillis();
         File file = new File("K:\\免费权益.xls");
+
         File fileout = new File("K:\\freeInsert.txt");
         String str = "INSERT INTO `td_cc_coupon_uptodate`(`merchant_name`, `coupon_name`, `consum_way`, `expiry_date`, `seq_id`, `is_price`, `create_time`) VALUES ('";
 
@@ -40,6 +42,7 @@ public class FreeCouponInsert {
                         //System.out.println(stb);
                     }
                     System.out.println("成功");
+                    System.out.println("所用时间：" + (System.currentTimeMillis()-time) + "毫秒");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

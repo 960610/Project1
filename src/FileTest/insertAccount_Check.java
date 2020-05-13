@@ -4,6 +4,7 @@ import java.io.*;
 
 public class insertAccount_Check {
     public static void main(String[] args) {
+        long time = System.currentTimeMillis();
         BufferedWriter fw = null;
         BufferedReader fr = null;
         try {
@@ -20,6 +21,7 @@ public class insertAccount_Check {
 
             }
             System.out.println("成功");
+            System.out.println("所用时间：" + (System.currentTimeMillis()-time));
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -48,7 +50,7 @@ public class insertAccount_Check {
         for (int i = 0; i < str.length; i++) {
             if(i == str.length-1){
                 sb.append(str[i]);
-                sb.append("');");
+                sb.append("',now());");
             }else{
                 sb.append(str[i]);
                 sb.append("','");
